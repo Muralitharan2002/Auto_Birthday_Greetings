@@ -1,0 +1,20 @@
+{
+    "version": 2,
+    "name": "Auto-Birthday-Greets-Server",
+    "builds": [
+       { "src": "index.js", "use": "@vercel/node" }
+    ],
+    "routes": [
+       { "src": "/(.*)", "dest": "/index.js" }
+    ],
+    "crons": [
+      {
+         "path": "/birthday/cronjob_1",
+         "schedule": "0 0 * * *" 
+      },
+      {
+         "path": "/birthday/cronjob_2", 
+         "schedule": "0 0 * * *"
+      }
+    ]
+ }
