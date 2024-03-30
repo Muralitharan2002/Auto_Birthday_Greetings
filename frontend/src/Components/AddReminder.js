@@ -60,7 +60,7 @@ function AddReminder() {
 
     return (
         <>
-            <div className=' container layout d-flex align-items-center justify-content-center'>
+            <div className=' container mt-5 d-flex align-items-center justify-content-center'>
                 <div className=' container form col-lg-5 col-12 py-4 px-lg-4 rounded-4 '>
                     <h3 className=' text-center'>Add Events</h3>
                     <form onSubmit={handleSubmit}>

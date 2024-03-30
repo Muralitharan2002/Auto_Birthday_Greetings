@@ -17,6 +17,11 @@ input:focus {
   );
 }
 
+.navbar,
+.bg {
+  background-color: #9effc8 !important;
+}
+
 .home {
   background: linear-gradient(
     0deg,
@@ -34,7 +39,10 @@ input:focus {
   color: #000000d5 !important;
   font-weight: 500 !important;
 }
-
+.active {
+  color: #017935d5 !important;
+  font-weight: 600 !important;
+}
 .nav-link:hover {
   color: #009641d5 !important;
 }
@@ -63,15 +71,8 @@ img {
   box-shadow: none !important;
 }
 
-.layout {
-  margin-top: 70px;
-}
 .form {
   border: 2px solid burlywood;
-}
-
-.layout1 {
-  margin-top: 50px;
 }
 
 .flex,

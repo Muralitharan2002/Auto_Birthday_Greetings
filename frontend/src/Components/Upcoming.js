@@ -97,22 +97,22 @@ function Upcoming() {
                                     {
                                         Events.length !== 0 ?
                                             <>
-                                                <div className='container layout1 '>
+                                                <div className='container mt-5 '>
                                                     <h3 className=' text-center mb-4 '>Upcoming Events</h3>
                                                     {Events.map((item, index) => (
 
                                                         <div key={index} className='mb-3 d-flex align-items-center justify-content-center' >
-                                                            <div className='py-2 px-4 col-lg-6 col-12 box d-flex align-items-center rounded-4 '>
+                                                            <div className='py-2 px-lg-4 px-2 col-lg-6 col-12 box d-flex align-items-center rounded-4 '>
                                                                 <div className='profile'>
                                                                     <img src={item.profileUrl} alt="profile_image" />
                                                                 </div>
-                                                                <div className='ms-4 col d-flex align-items-center justify-content-between '>
+                                                                <div className='ms-lg-4 ms-2 col d-flex align-items-center justify-content-between '>
                                                                     <div className=' d-flex  flex-column'>
                                                                         <div className='fw-bold'>{item.personName}</div>
                                                                         <div className='d-flex'>
                                                                             {item.day2go === 1 ? (<div className='size'>tomorrow</div>) :
                                                                                 (<div className='size '>{item.day2go} days to go</div>)}
-                                                                            <div className='ms-4 size status'>
+                                                                            <div className='ms-lg-4 ms-2  size status'>
                                                                                 <LiaHourglassEndSolid />
                                                                                 {item.status}
                                                                             </div>

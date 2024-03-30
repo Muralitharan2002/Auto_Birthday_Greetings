@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { MdOutlineLogout } from "react-icons/md";
 import axios from 'axios';
 import { url } from './url';
@@ -35,11 +35,11 @@ function Header() {
     return (
         <>
 
-            <nav className="navbar container-lg navbar-expand-lg p-2 header rounded-3">
+            <nav className="navbar container-lg navbar-expand-lg p-2 header rounded-3 position-sticky top-0 z-3 ">
                 <div className="container-lg">
-                    <Link className="navbar-brand fw-bolder title" href="#">BirthdayGreets</Link>
+                    <div className="navbar-brand fw-bolder title" href="#">BirthdayGreets</div>
 
-                    <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div className="offcanvas offcanvas-end bg" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                         <div className="offcanvas-header">
                             {/* <p className='navbar-nav me-auto profile'>
                                 M
@@ -49,16 +49,16 @@ function Header() {
                         <div className="offcanvas-body">
                             <ul className="navbar-nav justify-content-center flex-grow-1 pe-3">
                                 <li className="nav-item pe-3">
-                                    <Link to={"/home"} className="nav-link active" aria-current="page" >Home</Link>
+                                    <NavLink to={"/home"} className="nav-link">Home</NavLink>
                                 </li>
                                 <li className="nav-item pe-3">
-                                    <Link to={"/home/add_events"} className="nav-link active" aria-current="page" >Add Events</Link>
+                                    <NavLink to={"/home/add_events"} className="nav-link" >Add Events</NavLink>
                                 </li>
                                 <li className="nav-item pe-3">
-                                    <Link to={"/home/today_events"} className="nav-link" >Today Events</Link>
+                                    <NavLink to={"/home/today_events"} className="nav-link" >Today Events</NavLink>
                                 </li>
                                 <li className="nav-item pe-3">
-                                    <Link to={"/home/upcoming"} className="nav-link" >Upcoming Events</Link>
+                                    <NavLink to={"/home/upcoming"} className="nav-link" >Upcoming Events</NavLink>
                                 </li>
                             </ul>
                         </div>

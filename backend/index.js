@@ -3,7 +3,7 @@ const express = require("express")
 const cors = require("cors");
 const connectDB = require("./config/db")
 const router = require("./routes/user.routes")
-// require("./cron/cronJob")
+require("./cron/cronJob")
 
 const port = process.env.PORT;
 
