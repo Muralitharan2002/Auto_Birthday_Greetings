@@ -130,9 +130,9 @@ function Upcoming() {
                                                 </div>
                                             </>
                                             :
-                                            <div className='d-flex align-items-center justify-content-center mt-5'>
+                                            <div className='container d-flex align-items-center justify-content-center mt-5'>
                                                 <div>
-                                                    <h2 className=' mt-5'>No upcoming Events!</h2>
+                                                    <h2 className=' mt-5 text-center'>No upcoming Events!</h2>
                                                     <center>
                                                         <button className='btn btn-primary fw-medium m-2 mt-lg-4'>
                                                             <Link to={"/home/add_events"} className=" text-decoration-none text-light">Add Events</Link>

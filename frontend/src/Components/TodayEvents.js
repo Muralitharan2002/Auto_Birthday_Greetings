@@ -123,8 +123,8 @@ function TodayEvents() {
                                     </div>
                                     :
                                     <>
-                                        <div className='d-flex align-items-center justify-content-center mt-5'>
-                                            <h2 className=' mt-5'>Today you have no birthday events!</h2>
+                                        <div className=' container d-flex align-items-center justify-content-center mt-5'>
+                                            <h2 className=' mt-5 text-center'>Today you have no birthday events!</h2>
                                         </div>
                                     </>
                             }
