@@ -40,7 +40,7 @@ function App() {
               <Route path='today_events' element={<TodayEvents />} />
               <Route path='upcoming' element={<Upcoming />} />
             </Route>
-            <Route path='/greetings' element={<Greets />} />
+            <Route path='/greetings/:name/:_id/:_idO' element={<Greets />} />
           </Routes>
         </Router>
       </AuthUserContext.Provider>

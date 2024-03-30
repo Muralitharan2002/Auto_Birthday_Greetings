@@ -28,5 +28,6 @@ router.get("/today", auth, controls.today)
 router.post("/logout", auth, controls.logout)
 router.get('/cronjob_1', controls.cronjob_1)
 router.get('/cronjob_2', controls.cronjob_2)
+router.post("/greet", controls.greetings)
 
 module.exports = router;

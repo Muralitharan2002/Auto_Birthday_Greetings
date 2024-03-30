@@ -4,7 +4,7 @@ const model = require("../model/user.model")
 const jwt = require("jsonwebtoken");
 const cloudinary = require("cloudinary").v2;
 const daystogo = require("../utils/daystogo.utils");
-const cron = require("../cron/cronJob")
+const cron = require("../cron/cronJob");
 
 
 const createUser = async (req, res) => {
@@ -225,7 +225,6 @@ const update = async (req, res) => {
 
 }
 
-
 const RemoveRemainder = async (req, res) => {
     try {
         const id = req.data.id;
@@ -321,7 +320,7 @@ const logout = async (req, res) => {
     }
 }
 
-const cronjob_1 = (async (req, res) => {
+const cronjob_1 = async (req, res) => {
     try {
         await cron.cron1();
         //   res.send('Cron job 1 executed successfully');
@@ -329,8 +328,9 @@ const cronjob_1 = (async (req, res) => {
         console.error('Error executing cron job 1', error);
         //   res.status(500).send('Error executing cron job 1');
     }
-});
-const cronjob_2 = (async (req, res) => {
+};
+
+const cronjob_2 = async (req, res) => {
     try {
         await cron.cron2();
         //   res.send('Cron job 2 executed successfully');
@@ -338,7 +338,32 @@ const cronjob_2 = (async (req, res) => {
         console.error('Error executing cron job 2', error);
         //   res.status(500).send('Error executing cron job 1');
     }
-});
+};
+
+const greetings = async (req, res) => {
+    try {
+        const { _id, _idO, code } = req.body
+        // console.log(typeof _id)
+
+        const user = await model.coupon.findOne({ PersonId: _id })
+
+        const owner = await model.user.findOne({ _id: _idO })
+
+        if (user && user.expireTime > new Date()) {
+            if (user.coupon === code.trim()) {
+                res.status(200).json({ message: "coupon Matched", status: "success", Data: { senderName: owner.Name } })
+            } else {
+                res.status(200).json({ message: "coupon Not Matched", status: "warnings" })
+            }
+        } else {
+            await model.coupon.deleteOne({ PersonId: _id });
+            res.status(200).json({ message: "coupon Expired", status: "warning" })
+        }
+
+    } catch (err) {
+        return res.status(500).json({ message: "getting greeting process failed", status: "error", Error: err.message });
+    }
+}
 
 
-module.exports = { createUser, login, getuser, birthnote, update, RemoveRemainder, upcoming, today, logout, cronjob_1, cronjob_2 };
+module.exports = { createUser, login, getuser, birthnote, update, RemoveRemainder, upcoming, today, logout, cronjob_1, cronjob_2, greetings };

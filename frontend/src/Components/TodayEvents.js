@@ -85,15 +85,13 @@ function TodayEvents() {
                 />
             </div>
             :
-            <>
+            <div className='position-relative'>
 
                 {
                     Edit.length === 0 ?
                         <>
                             {
                                 Events.length !== 0 ?
-
-
                                     <div className='container layout1 '>
                                         <h3 className=' text-center mb-4 '>Today Events</h3>
                                         {Events.map((item, index) => (
@@ -108,13 +106,10 @@ function TodayEvents() {
                                                             <div className='d-flex  '>
                                                                 {item.day2go === 0 ? (<div className='size'>today</div>) :
                                                                     (<div className='size'>{item.day2go}</div>)}
-                                                                <div className='ms-4 size'>
+                                                                <div className='ms-4 size color'>
                                                                     <BiMailSend className='me-2' />
                                                                     {item.status}
                                                                 </div>
-                                                                {/* <div className='ms-4'>
-                                        <BiMailSend className='me-2' />
-                                        pending</div> */}
                                                             </div>
                                                         </div>
                                                         <div className=' align-items-end fw-bold d-flex gap-3'>
@@ -126,8 +121,6 @@ function TodayEvents() {
                                             </div>
                                         ))}
                                     </div>
-
-
                                     :
                                     <>
                                         <div className='d-flex align-items-center justify-content-center mt-5'>
@@ -137,12 +130,12 @@ function TodayEvents() {
                             }
                         </>
                         :
-                        <div className=' position-absolute top-0 w-100 bg-opacity-0 '>
+                        <div className=' position-absolute top-0 w-100  '>
                             <EditReminder item={Edit} Clear={clearEdit} getEvents={getEvents} />
                         </div>
                 }
 
-            </>
+            </div>
         }
 
 

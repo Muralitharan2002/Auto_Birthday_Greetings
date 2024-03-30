@@ -6,8 +6,6 @@ import { toast } from 'react-toastify'
 
 function EditReminder({ item, Clear, getEvents }) {
     const { token } = useContext(AuthUserContext)
-    // console.log(item.dob)
-
 
     const date = new Date(item.dob).toLocaleDateString();
     // console.log(date)
@@ -20,14 +18,6 @@ function EditReminder({ item, Clear, getEvents }) {
     const [email, setEmail] = useState(item.email)
     const [dob, setDOB] = useState(newDate)
     const [file, setFile] = useState(null)
-
-    // const clearState = () => {
-    //     setName("");
-    //     setEmail("");
-    //     setDOB("");
-    //     setFile(null);
-    // }
-
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -66,8 +56,7 @@ function EditReminder({ item, Clear, getEvents }) {
 
     return (
         <>
-            {/* <div className='  bg-opacity-0 '></div> */}
-            <div className=' container  layout d-flex align-items-center justify-content-center'>
+            <div className=' container layout d-flex align-items-center justify-content-center'>
                 <div className=' container form col-lg-5 col-12 py-4 px-lg-4 rounded-4 '>
                     <h3 className=' text-center'>Edit Events</h3>
                     <form onSubmit={handleSubmit}>

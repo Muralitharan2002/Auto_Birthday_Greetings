@@ -89,7 +89,7 @@ function Upcoming() {
                         />
                     </div>
                     :
-                    <div className=' position-relative '>
+                    <div className='position-relative'>
 
                         {
                             Edit.length === 0 ?
@@ -143,7 +143,7 @@ function Upcoming() {
                                     }
                                 </>
                                 :
-                                <div className=' position-absolute top-0 w-100 bg-opacity-0 '>
+                                <div className=' position-absolute top-0 w-100'>
                                     <EditReminder item={Edit} Clear={clearEdit} getEvents={getEvents} />
                                 </div>
                         }

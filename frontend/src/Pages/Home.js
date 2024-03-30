@@ -1,11 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Header from '../Components/Header'
-import { Triangle } from "react-loader-spinner"
 
 function Home() {
-    // const token = useContext(AuthUserContext)
-    // console.log(token)
 
     return (
         <>

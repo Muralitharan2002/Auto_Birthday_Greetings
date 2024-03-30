@@ -70,6 +70,15 @@ const sessionSchema = new mongoose.Schema({
 
 const session = mongoose.model("userSession", sessionSchema);
 
+const ManageCoupon = new mongoose.Schema({
+    PersonId: {
+        type: mongoose.Types.ObjectId
+    },
+    coupon: String,
+    expireTime: Date
+})
+
+const coupon = mongoose.model("manageCoupon", ManageCoupon);
 
 
-module.exports = { user, list, session };
+module.exports = { user, list, session, coupon };
