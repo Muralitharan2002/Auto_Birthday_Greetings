@@ -10,11 +10,11 @@
     "crons": [
       {
          "path": "/birthday/cronjob_1",
-         "schedule": "5 * * * *" 
+         "schedule": "20 * * * *" 
       },
       {
          "path": "/birthday/cronjob_2", 
-         "schedule": "5 * * * *"
+         "schedule": "20 * * * *"
       }
     ]
  }
