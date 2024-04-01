@@ -1,6 +1,11 @@
 # Auto Birthday Greeting System - MERN
 
 The Auto Birthday Greeting System with MERN Stack is a web application designed to automate the process of sending birthday greetings to friends registered within the system. Users can log in to the platform, add their friends' birthdays, and the system will automatically send out personalized birthday emails with unique coupon codes to their friends on their special day.
+## Demo Images
+
+![Automated Greetings](C:\users\murali\OneDrive\Pictures\Screenshots\Screenshot (148).png)
+*Automated Greetings*
+
 
 ## Features
 
