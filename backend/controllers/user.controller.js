@@ -34,12 +34,12 @@ const login = async (req, res) => {
         const { Email, Password } = req.body;
         const exist = await model.user.findOne({ Email })
         if (!exist) {
-            return res.status(404).json({ message: "user not found", status: "warning" })
+            return res.json({ message: "user not found", status: "warning" })
         }
 
         const match = await bcrypt.compare(Password, exist.Password);
 
-        if (!match) return res.status(401).json({ message: "Invalid crendential", status: "warning" })
+        if (!match) return res.json({ message: "Invalid crendential", status: "warning" })
 
         const userSession = await model.session.findOne({ userId: exist._id })
 
